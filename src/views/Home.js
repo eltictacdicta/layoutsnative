@@ -1,12 +1,15 @@
 import React from 'react'
-import {View,Text} from 'react-native'
+import {View,Text,TouchableHighlight} from 'react-native'
 
-const Home = () => {
+const Home = ({navegation}) => {
   return (
     <View>
         <Text>
             Hola soy la home
         </Text>
+        <TouchableHighlight 
+            onPress={()=> navegation.navegate('')}
+        ></TouchableHighlight>
     </View>
     
   )

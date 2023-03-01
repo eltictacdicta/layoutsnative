@@ -1,12 +1,21 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './src/views/Home';
+import Library from './src/views/Library';
+
+
+const Stack = createStackNavigator()
 
 const App  = () => {
   return (
-    <>
-      <ScrollView>
-
-          <View style={{ flexDirection: 'row' }}>
+    <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name='Home' component={Home} />
+            <Stack.Screen name='Library' component={Library} />
+        </Stack.Navigator>
+          {/* <View style={{ flexDirection: 'row' }}>
               <Image
                   style={styles.banner}
                   source={ require('./assets/img/bg.jpg') }
@@ -105,10 +114,9 @@ const App  = () => {
               </View>
 
 
-          </View>
+          </View> */}
 
-      </ScrollView>
-    </>
+    </NavigationContainer>
   );
 };
 

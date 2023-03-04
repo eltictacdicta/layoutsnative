@@ -23,16 +23,16 @@ const BOOK_LIST = [
 
 
 const Home = ({navigation}) => {
+  function handlerOnPress(){
+    navigation.navigate(Library)
+  }
   return (
     <View>
         <FlatList
           data={BOOK_LIST}
-          renderItem={({item}) => <BookListItem book={item}/>}
+          renderItem={({item}) => <BookListItem onPress={handlerOnPress} book={item}/>}
           keyExtractor={item => item.id}
         />
-        <TouchableHighlight 
-            onPress={()=> navigation.navigate(Library)}
-        ><Text>Ir a librería</Text></TouchableHighlight>
     </View>
     
   )
